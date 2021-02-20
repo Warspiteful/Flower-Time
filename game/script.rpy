@@ -3,6 +3,29 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+
+
+######## Sunflower Images ##################################
+image Sun Angry:
+    "./images/sunflower angry face gamejam.png"
+    zoom .50
+image Sun Blush:
+    "./images/sunflower blush face gamejam.png"
+    zoom .50
+image Sun Happy:
+    "./images/sunflower happy face gamejam.png"
+    zoom .50
+image Sun Base:
+    "./images/sunflower neutral face gamejam.png"
+    zoom .50
+image Sun Sad:
+    "./images/sunflower sad face gamejam.png"
+    zoom .50
+image Sun Surpise:
+    "./images/sunflower surprised face gamejam.png"
+    zoom .50
+
+#############################Character Declarations#############################################
 define ce = Character("Chrysanthemum", color="FFFFFF", who_outlines=[ (1, "#000000") ])
 define mc = Character("Chrys",color="FFFFFF",who_outlines=[ (1, "#000000") ])
 define r = Character("Rose", color = "CC0000",who_outlines=[ (1, "#000000") ])
@@ -10,6 +33,7 @@ define f = Character("Fungi",color = "330000",who_outlines=[ (1, "#000000") ])
 define s = Character("Sunflower", color = "FFFF33",who_outlines=[ (1, "#000000") ])
 define u = Character("???",color="FFFFFF",who_outlines=[ (1, "#000000") ])
 define c = Character("Cactus", color = "33FF00",who_outlines=[ (1, "#000000") ])
+###################################################################################
 
 # The game starts here.
 
@@ -42,11 +66,17 @@ label start:
 
     mc "Oh boy, I can't wait to meet all of these new plants"
 
+        show Sun Base
+
     s "Hey, hay, yay! I'm Sunflower, and I'm totally bastardizing my characterization."
 
     mc "(Oh god, kill it with fire) Oh, awesome. Are there (literally) any other flowers (since I can write them somewhat better)?"
 
+    show Sun Happy
+
     s "Oh sure, here, meet the three other characters."
+
+    hide Sun
 
     r "Oh? It's lovely to meet you. My name is Rose, ohoho~."
 
@@ -60,16 +90,27 @@ label start:
 
     f "My name is Fungi, and I'm not like other boys. I'm a bad boy."
 
+    show Sun Happy
+
     s "So, that's everyone!"
+
+    show Sun Blush
 
     s "So...this might be extremely forward but are you leaning towards anyone yet?"
 
     menu:
         "Sunflower":
             $ favorSun += 1
+            show Sun Surpise
             s "Huh? M-me? Like, for real?"
+
+            show Sun Blush
             s "{i}Breathe, Sunflower, breath {/i}"
+
+            show Sun Sad
             s "Haha, sorry, I suppose I made it awkward, didn't I?"
+
+
         "Rose":
             $ favorRose += 1
             s "Haha, I'm not surprised. Rose is cute after all."
@@ -86,7 +127,9 @@ label start:
             s "I suppose that's his style though. He doesn't really come out of the wall too often"
             s "Maybe he'll open up to you though? We'll have to see if you'll grow on him."
 
+    show Sun Happy
     s "{i}Ahem{/i}. Anyways, moving on."
+    show Sun 
     s "Well, Rose and I were going to be watching some Love Island later tonight."
     s "I think Fungi and Cactus were planning on watching The Bachelor at the same time."
     s "What do you want to spend the day doing?"
