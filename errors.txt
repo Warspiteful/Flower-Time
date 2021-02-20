@@ -2,29 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 6: end of line expected.
-    image Sun Angry: "./images/sunflower angry face gamejam.png"
-                     ^
-
-File "game/script.rpy", line 7: end of line expected.
-    image Sun Blush: "./images/sunflower blush face gamejam.png"
-                     ^
-
-File "game/script.rpy", line 8: end of line expected.
-    image Sun Happy:  "./images/sunflower happy face gamejam.png"
-                      ^
-
-File "game/script.rpy", line 9: end of line expected.
-    image Sun Base:  "./images/sunflower neutral face gamejam.png"
-                     ^
-
-File "game/script.rpy", line 10: end of line expected.
-    image Sun Sad:  "./images/sunflower sad face gamejam.png"
-                    ^
-
-File "game/script.rpy", line 11: end of line expected.
-    image Sun Surpise: "./images/sunflower surprised face gamejam.png"
-                       ^
+File "game/script.rpy", line 117: expected ':' not found.
+    label cactus
+                ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Fri Feb 19 00:40:36 2021
+Fri Feb 19 20:28:57 2021
