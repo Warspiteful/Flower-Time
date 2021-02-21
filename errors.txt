@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 117: expected ':' not found.
-    label cactus
-                ^
+File "game/script.rpy", line 242: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    menu:
+    ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Fri Feb 19 20:28:57 2021
+Sun Feb 21 01:02:55 2021
