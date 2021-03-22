@@ -228,7 +228,7 @@ define audio.rose = "./audio/A Flirty Little Rose.wav" ## Rose
 define audio.chrys = "./audio/A Little Tune for Chrys.wav" ## Chrys
 define audio.mainloop =   "<from 13 to 88>./audio/A Little Tune for Chrys.wav"
 define audio.cactus = "./audio/A Spiky Little Buckeroo.wav" ## Cactus
-define audio.badEnd = "./audio/Sad Boy Flowers.wav"
+define audio.badEnd = "./audio/SadBoyFlowers.wav"
 #############################################################################
 
 label before_main_menu:
@@ -299,6 +299,7 @@ label start:
 
 
     show Char Sun Happy
+    voice "./audio/Recording_39.ogg"
     s "Soooo, who's up first? Who d'ya wanna meet?"
     $ paths = [0, 1, 2, 3]
     $ lastPath = -1
@@ -2383,7 +2384,7 @@ label credits:
         with dissolve
         with Pause(1)
     if ending == 1:
-        play music badEnd
+
         show mushBad:
             yanchor 0.5 ypos 0.5
             xanchor 0.5 xpos 0.5
@@ -2407,7 +2408,7 @@ label credits:
         with dissolve
         with Pause(1)
     if ending == 3:
-        play music badEnd
+
         show sunBad:
             yanchor 0.5 ypos 0.5
             xanchor 0.5 xpos 0.5
@@ -2419,7 +2420,7 @@ label credits:
         with dissolve
         with Pause(1)
     if ending == 4:
-        play music badEnd
+
         show sunBad2:
             yanchor 0.5 ypos 0.5
             xanchor 0.5 xpos 0.5
@@ -2443,7 +2444,7 @@ label credits:
         with dissolve
         with Pause(1)
     if ending == 6:
-        play music badEnd
+    
         show cacBad:
             yanchor 0.5 ypos 0.5
             xanchor 0.5 xpos 0.5
