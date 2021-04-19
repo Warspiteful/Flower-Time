@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Blooming Hearts")
+define config.name = _("")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = ""
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -49,6 +49,7 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 define config.debug_sound = True
+define config.auto_voice = "voice/{id}.wav"
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.A
@@ -94,6 +95,7 @@ define config.end_game_transition = None
 ## A variable to set the transition used when the game starts does not exist.
 ## Instead, use a with statement after showing the initial scene.
 
+define config.default_fullscreen = True
 
 ## Window management ###########################################################
 ##
@@ -125,7 +127,6 @@ default preferences.text_cps = 60
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
 ## to 30 being the valid range.
 
-default preferences.afm_time = 15
 
 
 ## Save directory ##############################################################

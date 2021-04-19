@@ -1,14 +1,6 @@
-﻿################################################################################
-## Initialization
-################################################################################
-
-init offset = -1
-
-
 ################################################################################
 ## Styles
 ################################################################################
-
 style default:
     properties gui.text_properties()
     language gui.language
@@ -361,6 +353,8 @@ screen main_menu():
 
     add gui.main_menu_background
 
+
+
     ## This empty frame darkens the main menu.
     frame:
         pass
@@ -386,13 +380,15 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 420
+    xalign .5
+
+    xmaximum 1200
+    yalign 0.5
     yfill True
 
-    background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
+    xalign .5
     xoffset -30
     xmaximum 1200
     yalign 1.0
@@ -404,8 +400,6 @@ style main_menu_text:
 style main_menu_title:
     properties gui.text_properties("title")
 
-style main_menu_version:
-    properties gui.text_properties("version")
 
 
 ## Game Menu screen ############################################################
@@ -422,6 +416,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     style_prefix "game_menu"
 
     if main_menu:
+
         add gui.main_menu_background
     else:
         add gui.game_menu_background
@@ -1449,13 +1444,8 @@ style nvl_window:
     variant "small"
     background "gui/phone/nvl.png"
 
-style main_menu_frame:
-    variant "small"
-    background "gui/phone/overlay/main_menu.png"
 
-style game_menu_outer_frame:
-    variant "small"
-    background "gui/phone/overlay/game_menu.png"
+
 
 style game_menu_navigation_frame:
     variant "small"

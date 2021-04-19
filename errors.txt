@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 202: end of line expected.
-    show Char Mush Base with dissolve at mushFloor
-                                      ^
+File "game/screens.rpy", line 295: end of line expected.
+    if main_menu:f
+                 ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Mar  3 22:39:50 2021
+Thu Apr 15 20:44:28 2021
