@@ -23,14 +23,14 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = u'#FFFFFF'
+define gui.accent_color = u'#000000'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = u'#aaaaaa'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = u'#000000'
+define gui.idle_small_color = u'#FFFFFF'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = u'#336600'

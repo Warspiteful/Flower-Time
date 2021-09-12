@@ -281,29 +281,31 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
+init python:
+    renpy.music.register_channel("first", "sfx", False)
+    renpy.music.register_channel("second", "sfx", False)
+    renpy.music.set_volume(0.1,0,"first")
+    renpy.music.set_volume(0.1,0,"second")
+
 screen navigation():
-
     vbox:
-        style_prefix "navigation"
-
         xpos gui.navigation_xpos
         yalign 0.5
 
         spacing gui.navigation_spacing
 
-        if main_menu:
+       
 
-            textbutton _("Start") action Start()
+        textbutton _("History") action ShowMenu("history") 
 
-        else:
+        textbutton _("Save") action ShowMenu("save")
 
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
-
+      
         textbutton _("Load") action ShowMenu("load")
-
         textbutton _("Preferences") action ShowMenu("preferences")
+
+        
+           
 
         if _in_replay:
 
@@ -313,18 +315,34 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
+
+       
         textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
+       
+    
+                textbutton _("Help") action ShowMenu("help")
         if renpy.variant("pc"):
 
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
+                ## The quit button is banned on iOS and unnecessary on Android and
+                ## Web.
+               
             textbutton _("Quit") action Quit(confirm=not main_menu)
+
+    if gui.show_name:
+
+        vbox:
+            text "[config.name!t]":
+                style "main_menu_title"
+
+            text "[config.version]":
+                style "main_menu_version"
+
+    
+
 
 
 style navigation_button is gui_button
@@ -361,7 +379,53 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+
+    vbox:
+        style_prefix "navigation" xpos 645 ypos 480
+
+        #xpos gui.navigation_xpos
+        #yalign 0.5
+
+        spacing gui.navigation_spacing
+
+        
+
+           
+        imagebutton auto "images/MainMenu/BH_start_%s.png" focus_mask True action Play("first", "./audio/UI/Play.wav", 0.5), Start()
+
+
+        
+        imagebutton auto "images/MainMenu/BH_load_%s.png" focus_mask True action ShowMenu("load"), Play("first", "./audio/UI/Play.wav", 0.5)
+       
+
+        hbox: 
+            spacing 50
+            imagebutton auto "images/MainMenu/BH_settings_%s.png" focus_mask True action ShowMenu("preferences"),  Play("second",renpy.random.choice(["./audio/UI/OpenMenu1.wav", "./audio/UI/OpenMenu2.wav"]), 0.5)
+
+            if _in_replay:
+
+                textbutton _("End Replay") action EndReplay(confirm=True)
+
+            elif not main_menu:
+
+                textbutton _("Main Menu") action MainMenu()
+
+           
+            imagebutton auto "images/MainMenu/BH_about_%s.png" focus_mask True action ShowMenu("about"), Play("second", renpy.random.choice(["./audio/UI/OpenMenu1.wav", "./audio/UI/OpenMenu2.wav"]), 0.5)
+
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+                ## Help isn't necessary or relevant to mobile devices.
+                
+                imagebutton auto "images/MainMenu/BH_help_%s.png" focus_mask True action ShowMenu("help"), Play("second",renpy.random.choice(["./audio/UI/OpenMenu1.wav", "./audio/UI/OpenMenu2.wav"]), 0.5)
+                
+            if renpy.variant("pc"):
+
+                ## The quit button is banned on iOS and unnecessary on Android and
+                ## Web.
+             
+                imagebutton auto "images/MainMenu/BH_quit_%s.png" focus_mask True action Quit(confirm=not main_menu), Play("second",renpy.random.choice(["./audio/UI/OpenMenu1.wav", "./audio/UI/OpenMenu2.wav"]), 0.5)
+                
 
     if gui.show_name:
 
@@ -471,7 +535,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     textbutton _("Return"):
         style "return_button"
 
-        action Return()
+        action Return(), Play("second", renpy.random.choice(["./audio/UI/CloseMenu1.wav", "./audio/UI/CloseMenu2.wav"]), 0.5)
 
     label title
 

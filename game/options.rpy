@@ -12,24 +12,24 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("")
+define config.name = _("Blooming Hearts")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
 
-define config.version = ""
+define config.version = "1.2"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""A game made for Emerson College's 2021 Passionfruit Game Jam as a collaborative project between Northeastern, Emerson, and Berklee Students.
 """)
 
 
@@ -54,7 +54,7 @@ define config.auto_voice = "voice/{id}.wav"
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.A
 
-# define config.sample_sound = "sample-sound.ogg"
+#define config.sample_sound = "./audio/RILF-but-spoopier.mp3"
 # define config.sample_voice = "sample-voice.ogg"
 
 
@@ -143,7 +143,7 @@ default preferences.text_cps = 60
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "FlowerTime-1613266505"
+define config.save_directory = "BloomingHearts-1613266505"
 
 
 ## Icon ########################################################################
@@ -206,4 +206,4 @@ init python:
 ## The username and project name associated with an itch.io project, separated
 ## by a slash.
 
-# define build.itch_project = "renpytom/test-project"
+define build.itch_project = "warspiteful/blooming-hearts"
