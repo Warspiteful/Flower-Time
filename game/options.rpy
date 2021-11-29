@@ -38,7 +38,7 @@ define gui.about = _p("""A game made for Emerson College's 2021 Passionfruit Gam
 ## or semicolons.
 
 define build.name = "BloomingHearts"
-
+define config.layers = [ 'master', 'transient', 'screens', 'border_overlay', 'overlay' ]
 
 ## Sounds and music ############################################################
 

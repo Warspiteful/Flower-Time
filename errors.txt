@@ -2,13 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 398: expected a keyword argument, colon, or end of line.
-    imagebutton auto "images/MainMenu/BH_load_%s.png" focus_mask hover action add "Menu sun up resized.png" True action ShowMenu("load"), Play("first", "./audio/UI/Play.wav", 0.5)
-                                                                                  ^
+File "game/extras.rpy", line 31: expected an indented block
+                if i.file == renpy.music.get_playing('music'):
+                  ^
+    
 
-File "game/screens.rpy", line 543: u'actioxn' is not a keyword argument or valid child for the key statement.
-    key "game_menu" actioxn ShowMenu("main_menu")
-                           ^
-
-Ren'Py Version: Ren'Py 7.4.4.1439
-Fri Aug 27 02:38:20 2021
+Ren'Py Version: Ren'Py 7.4.10.2178
+Sun Nov 28 19:28:55 2021

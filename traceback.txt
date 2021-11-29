@@ -1,60 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/screens.rpy", line 361, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 361, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 380, in execute
-    if gui.show_name:
-  File "game/screens.rpy", line 380, in <module>
-    if gui.show_name:
-AttributeError: 'StoreModule' object has no attribute 'show_name'
+  File "game/prologue.rpy", line 33, in script
+    $ notify_music()
+  File "game/prologue.rpy", line 33, in <module>
+    $ notify_music()
+  File "game/extras.rpy", line 40, in notify_music
+    renpy.show_screen("notify_music",song=i.name[:-13])
+Exception: Unknown layer u'border_overlay'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "renpy/ast.py", line 922, in execute
+  File "game/prologue.rpy", line 33, in script
+    $ notify_music()
+  File "renpy/ast.py", line 928, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
+  File "renpy/python.py", line 2245, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3101, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3512, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 432, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3512, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 443, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 631, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 361, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 361, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 380, in execute
-    if gui.show_name:
-  File "game/screens.rpy", line 380, in <module>
-    if gui.show_name:
-AttributeError: 'StoreModule' object has no attribute 'show_name'
+  File "game/prologue.rpy", line 33, in <module>
+    $ notify_music()
+  File "game/extras.rpy", line 40, in notify_music
+    renpy.show_screen("notify_music",song=i.name[:-13])
+  File "renpy/display/screen.py", line 1147, in show_screen
+    d = ScreenDisplayable(screen, _tag, _layer, _widget_properties, scope, transient=_transient)
+  File "renpy/display/screen.py", line 374, in __init__
+    old_screen = get_screen(tag, layer)
+  File "renpy/display/screen.py", line 1055, in get_screen
+    sd = sl.get_displayable_by_tag(layer, tag)
+  File "renpy/display/core.py", line 1487, in get_displayable_by_tag
+    raise Exception("Unknown layer %r." % layer)
+Exception: Unknown layer u'border_overlay'.
 
 Windows-10-10.0.19041
-Ren'Py 7.4.4.1439
- 
-Thu Aug 26 22:35:28 2021
+Ren'Py 7.4.10.2178
+Blooming Hearts 1.2
+Sun Nov 28 19:38:47 2021
